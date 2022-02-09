@@ -1,17 +1,38 @@
-# React/TypeScript API: Security and Identity Management
+# React/TypeScript: React Router 6 Code Sample
 
-These code samples are part of the ["Auth0 Developer Hub"](https://auth0.com/developers/hub), a place where you can explore the authentication and authorization features of the Auth0 Identity Platform.
+This TypeScript code sample demonstrates how to build a React Single-Page Application (SPA) using React Router `v6` to manage navigation and page routing.
 
-[![Auth0 Developer Hub](https://cdn.auth0.com/blog/developer-hub/share/auth0-developer-hub.png)](https://auth0.com/developers/hub)
+Visit the ["React/TypeScript Apps: Security and Identity Management"](https://auth0.com/developers/hub/code-samples/spa/react-typescript) section of the ["Auth0 Developer Hub"](https://auth0.com/developers/hub) to explore how you can secure this React application by implementing authentication using Auth0.
 
-## Basic Authentication For React Router 6
+[![Security and Identity Management for React and TypeScript](https://cdn.auth0.com/blog/hub/code-samples/spa/react-typescript.png)](https://auth0.com/developers/hub/code-samples/spa/react-typescript)
 
-This JavaScript code sample demonstrates **how to implement authentication** in a React application that uses React Router 6. You can integrate the Auth0 React SDK with React Router 6 to create route guards in React.
 
-Visit the ["React/TypeScript Authentication: Integrate with React Router 6"](https://auth0.com/developers/hub/code-samples/spa/react-typescript/react-router-6-basic-authentication) page for instructions on how to configure and run this code sample and how to integrate it with an API server of your choice.
+## Run the Project
 
-[![React/TypeScript Authentication: Integrate with React Router 6](https://cdn.auth0.com/blog/hub/code-samples/spa/react-typescript/react-router-6-basic-authentication.png)](https://auth0.com/developers/hub/code-samples/spa/react-typescript/react-router-6-basic-authentication)
+Install the project dependencies:
 
-## Why Use Auth0?
+```bash
+npm install
+```
 
-Auth0 is a flexible, drop-in solution to add authentication and authorization services to your applications. Your team and organization can avoid the cost, time, and risk that comes with building your own solution to authenticate and authorize users. We offer tons of guidance and SDKs for you to get started and [integrate Auth0 in your stack easily](https://auth0.com/developers/hub/code-samples/full-stack).
+Create a `.env` file under the root project directory and populate it with the following environment variables:
+
+```bash
+REACT_APP_API_SERVER_URL=http://localhost:6060
+```
+
+Run the application in development mode:
+
+```bash
+npm start
+```
+
+Visit [`http://localhost:4040/`](http://localhost:4040/) to access the starter application.
+
+The starter React project offers a functional application that consumes data from an external API to hydrate the user interface. As such, you need to set up and run an API server like the ["Express.js/JavaScript: Basic API Code Sample
+"](https://github.com/auth0-developer-hub/api_express_javascript_hello-world/tree/starter).
+
+All the starter React application routes are public. However, you can use Auth0 to get an ID token to hydrate the user profile information present in the `/profile` page. With Auth0, you can also get an access token to make a secure call to an external API to hydrate the messages present in the `/protected` and `/admin` pages.
+
+
+
