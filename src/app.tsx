@@ -1,6 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer } from "./components/footer";
 import { Loader } from "./components/loader";
 import { MobileNavBar } from "./components/mobile-nav-bar";
@@ -25,29 +25,31 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="page-layout">
-      <NavBar />
-      <MobileNavBar />
-      <div className="page-layout__content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/profile"
-            element={<ProtectedRoute component={Profile} />}
-          />
-          <Route path="/public" element={<PublicPage />} />
-          <Route
-            path="/protected"
-            element={<ProtectedRoute component={ProtectedPage} />}
-          />
-          <Route
-            path="/admin"
-            element={<ProtectedRoute component={AdminPage} />}
-          />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+    <BrowserRouter>
+      <div className="page-layout">
+        <NavBar />
+        <MobileNavBar />
+        <div className="page-layout__content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/profile"
+              element={<ProtectedRoute component={Profile} />}
+            />
+            <Route path="/public" element={<PublicPage />} />
+            <Route
+              path="/protected"
+              element={<ProtectedRoute component={ProtectedPage} />}
+            />
+            <Route
+              path="/admin"
+              element={<ProtectedRoute component={AdminPage} />}
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </BrowserRouter>
   );
 };
