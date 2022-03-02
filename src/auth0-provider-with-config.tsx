@@ -1,7 +1,7 @@
 import { Auth0Provider } from "@auth0/auth0-react";
 import React, { PropsWithChildren } from "react";
 
-export const Auth0ProviderWithHistory = ({
+export const Auth0ProviderWithConfig = ({
   children,
 }: PropsWithChildren<any>): JSX.Element | null => {
   const domain: string | undefined = process.env.REACT_APP_AUTH0_DOMAIN;
